@@ -5,13 +5,11 @@ Created on Mon Mar 20 11:41:40 2023
 @author: u00180134
 """
 
-from io import BytesIO
+
 
 import pandas as pd
 import streamlit as st
 
-import matplotlib.pyplot as plt # プロット用
-import matplotlib.cm as cm
 import plotly.express as px
 
 
