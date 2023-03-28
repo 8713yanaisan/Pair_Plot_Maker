@@ -30,6 +30,15 @@ clm=list(df.columns)
 st.write("Color Map")
 
 
+#TimeStampの変換するかどうか
+filter_check = st.checkbox('フィルターしますか')
+if filter_check:
+    fil=st.selectbox('filter',clm)
+    'filterは',fil,'です。'
+    selected_erea = st.multiselect('グラフに表示する要素を選択', list(df[fil]))
+    df = df[(df[fil].isin(selected_erea))]
+
+
 
 x=st.selectbox('x軸',
     clm)
