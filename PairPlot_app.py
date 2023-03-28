@@ -35,7 +35,7 @@ filter_check = st.checkbox('フィルターしますか')
 if filter_check:
     fil=st.selectbox('filter',clm)
     'filterは',fil,'です。'
-    selected_erea = st.multiselect('グラフに表示する要素を選択', list(df[fil]))
+    selected_erea = st.multiselect('グラフに表示する要素を選択', list(set(list(df[fil]))))
     df = df[(df[fil].isin(selected_erea))]
 
 
