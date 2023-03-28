@@ -51,13 +51,9 @@ value_range=st.selectbox('変数の範囲',
 
 values = st.slider(
     '集計する 変数の範囲 の最小値と最大値を決める',
-   min(df[x]), max(df[x]), (min(df[x]), max(df[x])))
+   min(df[value_range]), max(df[value_range]), (min(df[value_range]), max(df[value_range])))
 
-df = df[(values[0] <= df[x]) & (values[1] >= df[x])]
-
-
-
-
+df = df[(values[0] <= df[value_range]) & (values[1] >= df[value_range])]
 
 
 #TimeStampの変換するかどうか
