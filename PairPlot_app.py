@@ -2,7 +2,7 @@
 """
 Created on Mon Mar 20 11:41:40 2023
 
-@author: u00180134
+@author: yanai
 """
 
 
@@ -44,6 +44,21 @@ color=st.selectbox('color',
 'colorは',color,'です。'
 
 df["Time_unix"]=df[color]
+
+value_range=st.selectbox('変数の範囲',
+    clm)
+'以下の変数',color,'の範囲を下記スライダーで設定。'
+
+values = st.slider(
+    '集計する 変数の範囲 の最小値と最大値を決める',
+   min(df[x]), max(df[x]), (min(df[x]), max(df[x])))
+
+df = df[(values[0] <= df[x]) & (values[1] >= df[x])]
+
+
+
+
+
 
 #TimeStampの変換するかどうか
 time_check = st.checkbox('Colorのデータ型： time')
