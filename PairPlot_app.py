@@ -5,12 +5,10 @@ Created on Mon Mar 20 11:41:40 2023
 @author: u00180134
 """
 
-from io import BytesIO
+
 
 import pandas as pd
 import streamlit as st
-
-
 import plotly.express as px
 
 
@@ -48,7 +46,7 @@ color=st.selectbox('color',
 df["Time_unix"]=df[color]
 
 #TimeStampの変換するかどうか
-time_check = st.checkbox('Color is time')
+time_check = st.checkbox('Colorのデータ型： time')
 if time_check:
     df["Time_unix"]=df[color].map(pd.Timestamp.timestamp)
 
