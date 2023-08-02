@@ -300,12 +300,12 @@ if graph_btn==True:
 
                    color=color_pair)
 
-         fig_pair.show()
+         st.plotly_chart(fig_pair, theme="streamlit", use_container_width=True)
 
      else:
 
          fig_pair=px.scatter_matrix(df_pair)
 
-         fig_pair.show()
+         st.plotly_chart(fig_pair, theme="streamlit", use_container_width=True)
 
  
